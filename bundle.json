@@ -1,15 +1,27 @@
 {
     "name": "@ohos/expat",
-    "description": "Expat is an XML parser library written in C. It is a stream-oriented parser in which an application registers handlers for things the parser might find in the XML document (like start tags).",
-    "version": "3.1",
+    "version": "",
+    "description": "Third-party open-source software expat | 三方开源软件expat",
+    "homePage": "https://gitee.com/openharmony",
     "license": "MIT",
+    "repository": "https://gitee.com/openharmony/third_party_expat",
+    "domain": "os",
+    "language": "",
     "publishAs": "code-segment",
+    "private": false,
+    "scripts": {},
+    "tags": [
+        "third_party"
+    ],
+    "keywords": [
+        "third-party",
+        "expat"
+    ],
+    "envs": {},
+    "dirs": {},
     "segment": {
         "destPath": "third_party/expat"
     },
-    "dirs": {},
-    "scripts": {},
-    "licensePath": "COPYING",
     "component": {
         "name": "thirdparty_expat",
         "subsystem": "",
@@ -18,10 +30,6 @@
         "adapted_system_type": [],
         "rom": "",
         "ram": "",
-        "deps": {
-            "components": [],
-            "third_party": []
-        },
         "build": {
             "sub_component": [],
             "inner_kits": [],

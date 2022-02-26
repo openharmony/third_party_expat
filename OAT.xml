@@ -66,7 +66,10 @@ Note:If the text contains special characters, please escape them according to th
                 <filteritem type="filepath" name="configure.ac" desc="MIT LICENSE不影响兼容性"/>
                 <filteritem type="filepath" name="lib/siphash.h" desc="MIT LICENSE不影响兼容性"/>
             </filefilter>
+            <filefilter name="binaryFileTypePolicyFilter" desc="Filters for binary file policies" >
+                <filteritem type="filename" name="doc/expat.png" desc="Binary files that do not involve infringement."/>
+                <filteritem type="filename" name="doc/valid-xhtml10.png" desc="Binary files that do not involve infringement."/>
+            </filefilter>
         </filefilterlist>
-
     </oatconfig>
 </configuration>
