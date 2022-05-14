@@ -11,8 +11,8 @@
     "scripts": {},
     "licensePath": "COPYING",
     "component": {
-        "name": "thirdparty_expat",
-        "subsystem": "",
+        "name": "expat",
+        "subsystem": "thirdparty",
         "syscap": [],
         "features": [],
         "adapted_system_type": [],
