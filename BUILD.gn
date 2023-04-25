@@ -1,11 +1,13 @@
 import("//build/ohos.gni")
 
+expat_path = rebase_path("//third_party/expat")
+exec_script("install.sh", [ "$expat_path" ])
+
 ## Build expat.a {{{
 config("expat_config") {
   visibility = [ ":*" ]
 
-  include_dirs = [
-  ]
+  include_dirs = []
 
   cflags = [
     "-DXML_POOR_ENTROPY",
@@ -30,18 +32,12 @@ ohos_static_library("expat") {
     "lib/xmltok.c",
   ]
 
-  configs = [
-    ":expat_config",
-  ]
+  configs = [ ":expat_config" ]
 
-  public_configs = [
-    ":expat_public_config",
-  ]
+  public_configs = [ ":expat_public_config" ]
 
-  deps = [
-  ]
+  deps = []
 
-  public_deps = [
-  ]
+  public_deps = []
 }
 ## Build expat.a }}}
