@@ -1,5 +1,8 @@
 import("//build/ohos.gni")
 
+expat_path = rebase_path("//third_party/expat")
+exec_script("install.sh", [ "$expat_path" ])
+
 ## Build expat.a {{{
 config("expat_config") {
   visibility = [ ":*" ]
