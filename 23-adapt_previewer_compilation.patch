@@ -1,0 +1,55 @@
+diff --git a/lib/xmlparse.c b/lib/xmlparse.c
+index 8199488..8453289 100644
+--- a/lib/xmlparse.c
++++ b/lib/xmlparse.c
+@@ -88,9 +88,9 @@
+ 
+ #ifdef _WIN32
+ #  include "winconfig.h"
+-#endif
+-
+-#include <expat_config.h>
++#elif defined(HAVE_EXPAT_CONFIG_H)
++#  include <expat_config.h>
++#endif /* ndef _WIN32 */
+ 
+ #include "ascii.h"
+ #include "expat.h"
+diff --git a/lib/xmlrole.c b/lib/xmlrole.c
+index 08173b0..ddb22ef 100644
+--- a/lib/xmlrole.c
++++ b/lib/xmlrole.c
+@@ -41,9 +41,11 @@
+ 
+ #ifdef _WIN32
+ #  include "winconfig.h"
+-#endif
+-
+-#include <expat_config.h>
++#else
++#  ifdef HAVE_EXPAT_CONFIG_H
++#    include <expat_config.h>
++#  endif
++#endif /* ndef _WIN32 */
+ 
+ #include "expat_external.h"
+ #include "internal.h"
+diff --git a/lib/xmltok.c b/lib/xmltok.c
+index 8d77d60..53ec1d0 100644
+--- a/lib/xmltok.c
++++ b/lib/xmltok.c
+@@ -48,9 +48,11 @@
+ 
+ #ifdef _WIN32
+ #  include "winconfig.h"
+-#endif
+-
+-#include <expat_config.h>
++#else
++#  ifdef HAVE_EXPAT_CONFIG_H
++#    include <expat_config.h>
++#  endif
++#endif /* ndef _WIN32 */
+ 
+ #include "expat_external.h"
+ #include "internal.h"
