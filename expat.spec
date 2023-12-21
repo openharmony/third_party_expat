@@ -83,14 +83,11 @@ make check
 %{_mandir}/man1/*
 
 %changelog
-* Sat Oct 29 2022 fuanan <fuanan3@h-partners.com> - 2.4.1-8
-- fix CVE-2022-43680
+* Tue Dec 13 2022 zhoupengcheng <zhoupengcheng11@huawei.com> - 2.4.8-8
+- Move autoreconf to build
 
-* Tue Oct 11 2022 huangduirong <huangduirong@huawei.com> - 2.4.1-7
-- Type:bugfix
-- ID:NA
-- SUG:NA
-- DESC:Move autoreconf to build
+* Sat Oct 29 2022 fuanan <fuanan3@h-partners.com> - 2.4.1-7
+- fix CVE-2022-43680
 
 * Thu Sep 15 2022 panxiaohe <panxh.life@foxmail.com> - 2.4.1-6
 - fix CVE-2022-40674
@@ -103,7 +100,7 @@ make check
 
 * Sat Feb 26 2022 yangzhuangzhuang <yangzhuangzhuang1@h-partners.com> - 2.4.1-4
 - Type:CVE
-- ID:Fix CVE-2022-25235 CVE-2022-25236 CVE-2022-25313 CVE-2022-25314 CVE-2022-25315
+- ID:CVE-2022-25235 CVE-2022-25236 CVE-2022-25313 CVE-2022-25314 CVE-2022-25315
 - SUG:NA
 - DESC:Fix CVE-2022-25235 CVE-2022-25236 CVE-2022-25313 CVE-2022-25314 CVE-2022-25315
 
