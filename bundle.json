@@ -1,0 +1,42 @@
+{
+    "name": "@ohos/expat",
+    "description": "Expat is an XML parser library",
+    "version": "7.0",
+    "license": "MIT",
+    "publishAs": "code-segment",
+    "segment": {
+        "destPath": "third_party/expat"
+    },
+    "dirs": {},
+    "scripts": {},
+    "readmePath": {
+        "en": "README"
+    },
+    "component": {
+        "name": "expat",
+        "subsystem": "thirdparty",
+        "syscap": [],
+        "features": [],
+        "adapted_system_type": ["standard"],
+        "rom": "",
+        "ram": "",
+        "deps": {
+            "components": [],
+            "third_party": []
+        },
+        "build": {
+            "sub_component": [
+                "//third_party/expat:expat"
+            ],
+            "inner_kits": [
+                {
+                    "name": "//third_party/expat:expat"
+                },
+                {
+                    "name": "//third_party/expat:expat_static"
+                }
+            ],
+            "test": []
+        }
+    }
+}
