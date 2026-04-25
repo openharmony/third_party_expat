@@ -1,0 +1,82 @@
+# Copyright (c) 2023 Huawei Device Co., Ltd. All rights reserved.
+
+import("//build/config/config.gni")
+import("//build/ohos.gni")
+
+config("expat_config") {
+  cflags = [
+    "-Wno-incompatible-pointer-types",
+    "-Werror",
+    "-Wno-strict-prototypes",
+    "-Wimplicit-function-declaration",
+  ]
+  defines = [ "XML_STATIC" ]
+}
+
+config("expat_public_config") {
+  include_dirs = [
+    "expat/lib",
+    "include/expat_config",
+  ]
+}
+
+ohos_shared_library("expat") {
+  _src = "expat"
+
+  public = [ "$_src/lib/expat.h" ]
+
+  sources = [
+    "$_src/lib/ascii.h",
+    "$_src/lib/asciitab.h",
+    "$_src/lib/expat_external.h",
+    "$_src/lib/iasciitab.h",
+    "$_src/lib/internal.h",
+    "$_src/lib/latin1tab.h",
+    "$_src/lib/nametab.h",
+    "$_src/lib/siphash.h",
+    "$_src/lib/utf8tab.h",
+    "$_src/lib/winconfig.h",
+    "$_src/lib/xmlparse.c",
+    "$_src/lib/xmlrole.c",
+    "$_src/lib/xmlrole.h",
+    "$_src/lib/xmltok.c",
+    "$_src/lib/xmltok.h",
+    "$_src/lib/xmltok_impl.h",
+  ]
+
+  configs = [ ":expat_config" ]
+  public_configs = [ ":expat_public_config" ]
+
+  part_name = "expat"
+  subsystem_name = "thirdparty"
+}
+
+ohos_static_library("expat_static") {
+  _src = "expat"
+
+  public = [ "$_src/lib/expat.h" ]
+
+  sources = [
+    "$_src/lib/ascii.h",
+    "$_src/lib/asciitab.h",
+    "$_src/lib/expat_external.h",
+    "$_src/lib/iasciitab.h",
+    "$_src/lib/internal.h",
+    "$_src/lib/latin1tab.h",
+    "$_src/lib/nametab.h",
+    "$_src/lib/siphash.h",
+    "$_src/lib/utf8tab.h",
+    "$_src/lib/winconfig.h",
+    "$_src/lib/xmlparse.c",
+    "$_src/lib/xmlrole.c",
+    "$_src/lib/xmlrole.h",
+    "$_src/lib/xmltok.c",
+    "$_src/lib/xmltok.h",
+    "$_src/lib/xmltok_impl.h",
+  ]
+
+  configs = [ ":expat_config" ]
+  public_configs = [ ":expat_public_config" ]
+  part_name = "expat"
+  subsystem_name = "thirdparty"
+}
