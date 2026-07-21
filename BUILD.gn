@@ -21,6 +21,7 @@ config("expat_public_config") {
 }
 
 ohos_shared_library("expat") {
+  branch_protector_ret = "pac_ret"
   _src = "expat"
 
   public = [ "$_src/lib/expat.h" ]
@@ -52,6 +53,7 @@ ohos_shared_library("expat") {
 }
 
 ohos_static_library("expat_static") {
+  branch_protector_ret = "pac_ret"
   _src = "expat"
 
   public = [ "$_src/lib/expat.h" ]
