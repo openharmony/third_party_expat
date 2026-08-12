@@ -128,8 +128,22 @@ resolveSystemId(const XML_Char *base, const XML_Char *systemId,
 #endif
   )
     return systemId;
-  *toFree = (XML_Char *)malloc((tcslen(base) + tcslen(systemId) + 2)
-                               * sizeof(XML_Char));
+
+  const size_t baseLen = tcslen(base);
+  const size_t systemIdLen = tcslen(systemId);
+
+  /* Detect and prevent integer overflow in the addition (without risking
+     underflow) */
+  if (baseLen > SIZE_MAX - systemIdLen || baseLen > SIZE_MAX - systemIdLen - 2)
+    return systemId;
+
+  const size_t charsRequired = baseLen + systemIdLen + 2;
+
+  /* Detect and prevent integer overflow in the multiplication */
+  if (charsRequired > SIZE_MAX / sizeof(XML_Char))
+    return systemId;
+
+  *toFree = (XML_Char *)malloc(charsRequired * sizeof(XML_Char));
   if (! *toFree)
     return systemId;
   tcscpy(*toFree, base);
